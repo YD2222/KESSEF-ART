@@ -3,21 +3,44 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --obsidian: #0A0A0A;
+  --carbon: #1A1A1A;
+  --ivory: #F5F5F3;
+  --museum: #787878;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--ivory);
+  color: var(--obsidian);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ivory);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--museum);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--obsidian);
+}
+
+/* Selection */
+::selection {
+  background: var(--obsidian);
+  color: var(--ivory);
 }
 
 @layer utilities {
