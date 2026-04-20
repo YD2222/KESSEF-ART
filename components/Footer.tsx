@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Logo from "./Logo";
+import PaymentBadges from "./PaymentBadges";
 
 export default function Footer() {
   return (
@@ -65,13 +66,18 @@ export default function Footer() {
         </div>
       </div>
 
+      {/* Payment badges */}
+      <div className="max-w-[1440px] mx-auto px-8 md:px-16 py-8 border-b border-ivory/10">
+        <PaymentBadges inverted />
+      </div>
+
       {/* Bottom */}
       <div className="max-w-[1440px] mx-auto px-8 md:px-16 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="font-barlow font-light text-[10px] tracking-widest text-ivory/20 uppercase">
           © {new Date().getFullYear()} Kessef Art. Tous droits réservés.
         </p>
         <p className="font-barlow font-light text-[10px] tracking-widest text-ivory/20 uppercase">
-          Paiement sécurisé — Livraison assurée — Authenticité garantie
+          Livraison assurée — Authenticité garantie
         </p>
       </div>
     </footer>

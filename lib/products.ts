@@ -235,12 +235,192 @@ export const products: Product[] = [
   },
 ];
 
+// ── Casques Bluetooth ──────────────────────────────────────────────────────
+
+export const casques: Product[] = [
+  {
+    id: "c1",
+    slug: "casque-kong-noir",
+    name: "Casque Kong",
+    artist: "Richard Orlinski",
+    coloris: "Noir",
+    description: "Le Kong sur vos oreilles — puissance sonore et design sculptural en version noir absolu.",
+    longDescription:
+      "Le Casque Kong Noir transpose la signature géométrique d'Orlinski dans l'univers du son haute fidélité. Chaque facette du casque reflète la lumière à sa manière, faisant de cet objet un véritable accessoire d'art. Le noir mat impose une présence sobre et absolue, pour un port aussi remarqué que confortable.",
+    badge: "nouveau",
+    available: true,
+    images: ["/products/cnoir.jpg", "/products/cnoir1.jpg"],
+    specs: {
+      bluetooth: "Bluetooth 5.3 — portée 15m",
+      puissance: "Drivers 40mm — 20Hz-20kHz",
+      autonomie: "Batterie 600 mAh — 30h d'écoute",
+      dimensions: "19 × 17 × 8 cm (replié)",
+      poids: "280 g",
+      charge: "USB-C — charge rapide 1h",
+      connectiques: "Jack 3,5mm / USB-C",
+    },
+    category: "Casque Bluetooth",
+    inclus: "Pochette de transport rigide, câble USB-C, câble jack 3,5mm",
+  },
+  {
+    id: "c2",
+    slug: "casque-kong-argent",
+    name: "Casque Kong",
+    artist: "Richard Orlinski",
+    coloris: "Argent",
+    description: "Une finition chromée qui fait du casque un bijou technologique autant qu'une parure.",
+    longDescription:
+      "Le Casque Kong Argent brille autant qu'il sonne. Sa surface miroir capte et reflète chaque source lumineuse, transformant l'accessoire en objet de désir à part entière. La signature géométrique d'Orlinski se prête à merveille à cette finition précieuse, digne des grandes collections d'art contemporain.",
+    available: true,
+    images: ["/products/cargent.jpg", "/products/cargent1.jpg"],
+    specs: {
+      bluetooth: "Bluetooth 5.3 — portée 15m",
+      puissance: "Drivers 40mm — 20Hz-20kHz",
+      autonomie: "Batterie 600 mAh — 30h d'écoute",
+      dimensions: "19 × 17 × 8 cm (replié)",
+      poids: "280 g",
+      charge: "USB-C — charge rapide 1h",
+      connectiques: "Jack 3,5mm / USB-C",
+    },
+    category: "Casque Bluetooth",
+    inclus: "Pochette de transport rigide, câble USB-C, câble jack 3,5mm",
+  },
+  {
+    id: "c3",
+    slug: "casque-kong-blanc",
+    name: "Casque Kong",
+    artist: "Richard Orlinski",
+    coloris: "Blanc",
+    description: "La pureté du blanc pour un Kong lumineux, entre sculpture minimaliste et élégance intemporelle.",
+    longDescription:
+      "Le Casque Kong Blanc incarne la clarté et la légèreté. Sa teinte immaculée évoque l'épure des galeries d'art les plus exclusives, tout en affichant la puissance formelle caractéristique d'Orlinski. Un équilibre parfait entre force et délicatesse, pour ceux qui voient le blanc comme une couleur à part entière.",
+    available: true,
+    images: ["/products/cblanc.jpg", "/products/cblanc1.jpg"],
+    specs: {
+      bluetooth: "Bluetooth 5.3 — portée 15m",
+      puissance: "Drivers 40mm — 20Hz-20kHz",
+      autonomie: "Batterie 600 mAh — 30h d'écoute",
+      dimensions: "19 × 17 × 8 cm (replié)",
+      poids: "280 g",
+      charge: "USB-C — charge rapide 1h",
+      connectiques: "Jack 3,5mm / USB-C",
+    },
+    category: "Casque Bluetooth",
+    inclus: "Pochette de transport rigide, câble USB-C, câble jack 3,5mm",
+  },
+  {
+    id: "c4",
+    slug: "casque-kong-bleu",
+    name: "Casque Kong",
+    artist: "Richard Orlinski",
+    coloris: "Bleu",
+    description: "Un bleu profond et vibrant — le Kong sur vos oreilles avec toute son intensité chromatique.",
+    longDescription:
+      "Le Casque Kong Bleu s'impose avec une énergie visuelle rare. Ce bleu profond et électrique transforme chaque port en déclaration de style. Les facettes géométriques d'Orlinski jouent avec cette teinte pour créer des reflets changeants, faisant du casque une sculpture en mouvement perpétuel.",
+    available: true,
+    images: ["/products/cbleu.jpg", "/products/cbleu1.jpg"],
+    specs: {
+      bluetooth: "Bluetooth 5.3 — portée 15m",
+      puissance: "Drivers 40mm — 20Hz-20kHz",
+      autonomie: "Batterie 600 mAh — 30h d'écoute",
+      dimensions: "19 × 17 × 8 cm (replié)",
+      poids: "280 g",
+      charge: "USB-C — charge rapide 1h",
+      connectiques: "Jack 3,5mm / USB-C",
+    },
+    category: "Casque Bluetooth",
+    inclus: "Pochette de transport rigide, câble USB-C, câble jack 3,5mm",
+  },
+  {
+    id: "c5",
+    slug: "casque-kong-rose",
+    name: "Casque Kong",
+    artist: "Richard Orlinski",
+    coloris: "Rose",
+    description: "Le rose audacieux d'Orlinski — une déclaration de style portée à même vos oreilles.",
+    longDescription:
+      "Le Casque Kong Rose est une affirmation. Ce rose vif et assumé s'impose avec une légèreté trompeuse — derrière la séduction chromatique se cache un objet d'une puissance formelle absolue. Orlinski signe ici un accessoire aussi iconique que les sculptures qui ont fait sa renommée mondiale.",
+    available: true,
+    images: ["/products/crose.jpg", "/products/crose1.jpg"],
+    specs: {
+      bluetooth: "Bluetooth 5.3 — portée 15m",
+      puissance: "Drivers 40mm — 20Hz-20kHz",
+      autonomie: "Batterie 600 mAh — 30h d'écoute",
+      dimensions: "19 × 17 × 8 cm (replié)",
+      poids: "280 g",
+      charge: "USB-C — charge rapide 1h",
+      connectiques: "Jack 3,5mm / USB-C",
+    },
+    category: "Casque Bluetooth",
+    inclus: "Pochette de transport rigide, câble USB-C, câble jack 3,5mm",
+  },
+  {
+    id: "c6",
+    slug: "casque-kong-rouge",
+    name: "Casque Kong",
+    artist: "Richard Orlinski",
+    coloris: "Rouge",
+    description: "Le rouge passion — un Kong sur vos oreilles qui ne passe jamais inaperçu.",
+    longDescription:
+      "Le Casque Kong Rouge brûle d'une intensité visuelle incomparable. Sa couleur écarlate, amplifiée par les multiples facettes géométriques de la signature Orlinski, en fait un accessoire aussi percutant visuellement que musicalement. Pour ceux qui vivent chaque instant avec passion et sans retenue.",
+    badge: "exclusif",
+    available: true,
+    images: ["/products/crouge.jpg", "/products/crouge1.jpg"],
+    specs: {
+      bluetooth: "Bluetooth 5.3 — portée 15m",
+      puissance: "Drivers 40mm — 20Hz-20kHz",
+      autonomie: "Batterie 600 mAh — 30h d'écoute",
+      dimensions: "19 × 17 × 8 cm (replié)",
+      poids: "280 g",
+      charge: "USB-C — charge rapide 1h",
+      connectiques: "Jack 3,5mm / USB-C",
+    },
+    category: "Casque Bluetooth",
+    inclus: "Pochette de transport rigide, câble USB-C, câble jack 3,5mm",
+  },
+];
+
+// ── Clé USB Kong ──────────────────────────────────────────────────────────
+
+export const usbs: Product[] = [
+  {
+    id: "u1",
+    slug: "usb-kong",
+    name: "Clé USB Kong",
+    artist: "Richard Orlinski",
+    coloris: "Or",
+    description: "La signature géométrique d'Orlinski miniaturisée — une clé USB qui est avant tout une sculpture.",
+    longDescription:
+      "La Clé USB Kong transpose l'ADN sculptural de Richard Orlinski dans l'objet le plus quotidien qui soit. Chaque facette géométrique est fidèle à l'œuvre originale, faisant de cet accessoire technologique une pièce de collection à part entière. À poser sur un bureau, à offrir, ou à porter comme un bijou — la Clé USB Kong redéfinit ce qu'un objet du quotidien peut être.",
+    badge: "exclusif",
+    available: true,
+    images: ["/products/usb.jpg", "/products/usb1.jpg"],
+    specs: {
+      bluetooth: "—",
+      puissance: "—",
+      autonomie: "—",
+      dimensions: "6 × 2 × 2 cm",
+      poids: "15 g",
+      charge: "—",
+      connectiques: "USB-A 3.0 — haute vitesse",
+    },
+    category: "Clé USB",
+    inclus: "Boîte collector Orlinski, pochette velours",
+  },
+];
+
+export const allProducts: Product[] = [...products, ...casques, ...usbs];
+
 export function getProductBySlug(slug: string): Product | undefined {
-  return products.find((p) => p.slug === slug);
+  return allProducts.find((p) => p.slug === slug);
 }
 
 export function getRelatedProducts(productId: string, limit = 3): Product[] {
-  return products.filter((p) => p.id !== productId).slice(0, limit);
+  const product = allProducts.find((p) => p.id === productId);
+  if (!product) return [];
+  return allProducts
+    .filter((p) => p.id !== productId && p.category === product.category)
+    .slice(0, limit);
 }
 
 export const badgeLabels: Record<string, string> = {

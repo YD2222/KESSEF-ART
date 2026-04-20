@@ -6,6 +6,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { useCart } from "@/context/CartContext";
 import CheckoutForm from "./CheckoutForm";
+import PaymentBadges from "@/components/PaymentBadges";
 
 export default function CartClient() {
   const { items, removeItem, updateQuantity, totalItems } = useCart();
@@ -183,6 +184,10 @@ export default function CartClient() {
                 >
                   Faire une demande
                 </button>
+
+                <div className="mt-6">
+                  <PaymentBadges />
+                </div>
 
                 <Link
                   href="/catalogue"
