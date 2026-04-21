@@ -128,6 +128,36 @@ export default function ProductDetailClient({ product, related }: Props) {
             </button>
           </div>
 
+          {/* Bundle valise — Speaker Kong uniquement */}
+          {product.category === "Speaker Kong" && (
+            <div className="mb-4 flex items-center gap-4 border border-obsidian/15 px-5 py-4 bg-obsidian/[0.02]">
+              {/* Icône valise */}
+              <div className="flex-shrink-0 flex items-center justify-center w-10 h-10 bg-obsidian">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="2" y="7" width="20" height="14" rx="2" stroke="#F5F5F3" strokeWidth="1.5"/>
+                  <path d="M8 7V5C8 3.9 8.9 3 10 3H14C15.1 3 16 3.9 16 5V7" stroke="#F5F5F3" strokeWidth="1.5"/>
+                  <line x1="2" y1="12" x2="22" y2="12" stroke="#F5F5F3" strokeWidth="1.5"/>
+                  <line x1="12" y1="12" x2="12" y2="21" stroke="#F5F5F3" strokeWidth="1"/>
+                </svg>
+              </div>
+              {/* Texte */}
+              <div className="flex-1">
+                <p className="font-barlow font-light text-[9px] tracking-widest3 uppercase text-museum mb-0.5">
+                  Inclus dans votre commande
+                </p>
+                <p className="font-bebas text-[18px] tracking-wide text-obsidian leading-none">
+                  + Sa valise Kong Escape assortie
+                </p>
+              </div>
+              {/* Badge offert */}
+              <div className="flex-shrink-0 bg-obsidian px-3 py-1.5">
+                <span className="font-barlow font-light text-[8px] tracking-widest3 uppercase text-ivory">
+                  Offerte
+                </span>
+              </div>
+            </div>
+          )}
+
           {/* Transparence état produit — Speaker Kong uniquement */}
           {product.category === "Speaker Kong" && (
             <div className="mb-8 flex items-start gap-3 px-4 py-3 border border-obsidian/10 bg-obsidian/[0.02]">
