@@ -2,24 +2,41 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { products, casques, usbs } from "@/lib/products";
+import { products, casques, usbs, exclusivites, digigraphies, livres, bestSellers, divers, textiles } from "@/lib/products";
 import ProductCard from "@/components/ProductCard";
+import { Product } from "@/lib/products";
 
-type Section = "tous" | "speaker" | "casque" | "usb";
+type Section = "tous" | "speaker" | "casque" | "usb" | "exclusivites" | "digigraphies" | "livres" | "best-sellers" | "divers" | "textiles";
+
+const sections: { key: Section; label: string; subtitle: string; products: Product[] }[] = [
+  { key: "speaker", label: "Speaker Kong", subtitle: "Enceinte d'art", products },
+  { key: "casque", label: "Casque Bluetooth", subtitle: "Audio haute fidélité", products: casques },
+  { key: "usb", label: "Clé USB", subtitle: "Accessoire collector", products: usbs },
+  { key: "exclusivites", label: "Exclusivités", subtitle: "Sculptures & éditions limitées", products: exclusivites },
+  { key: "digigraphies", label: "Digigraphies", subtitle: "Reproductions d'art", products: digigraphies },
+  { key: "livres", label: "Livres", subtitle: "Art books & publications", products: livres },
+  { key: "best-sellers", label: "Best Sellers", subtitle: "Les incontournables", products: bestSellers },
+  { key: "divers", label: "Divers", subtitle: "Accessoires & lifestyle", products: divers },
+  { key: "textiles", label: "Textiles", subtitle: "Mode & streetwear", products: textiles },
+];
+
+const allProducts = [...products, ...casques, ...usbs, ...exclusivites, ...digigraphies, ...livres, ...bestSellers, ...divers, ...textiles];
 
 export default function CatalogueClient() {
   const [activeSection, setActiveSection] = useState<Section>("tous");
 
-  const sections: { key: Section; label: string }[] = [
+  const filters: { key: Section; label: string }[] = [
     { key: "tous", label: "Tous" },
-    { key: "speaker", label: "Speaker Kong" },
-    { key: "casque", label: "Casque Bluetooth" },
-    { key: "usb", label: "Clé USB" },
+    ...sections.map(({ key, label }) => ({ key, label })),
   ];
 
-  const showSpeakers = activeSection === "tous" || activeSection === "speaker";
-  const showCasques = activeSection === "tous" || activeSection === "casque";
-  const showUsbs = activeSection === "tous" || activeSection === "usb";
+  const visibleSections = activeSection === "tous"
+    ? sections
+    : sections.filter((s) => s.key === activeSection);
+
+  const totalCount = activeSection === "tous"
+    ? allProducts.length
+    : (sections.find((s) => s.key === activeSection)?.products.length ?? 0);
 
   return (
     <div className="max-w-[1440px] mx-auto px-8 md:px-16">
@@ -44,12 +61,12 @@ export default function CatalogueClient() {
       </div>
 
       {/* Section filters */}
-      <div className="py-6 flex flex-wrap items-center gap-3 border-b border-obsidian/10">
-        {sections.map(({ key, label }) => (
+      <div className="py-6 flex flex-wrap items-center gap-2 border-b border-obsidian/10">
+        {filters.map(({ key, label }) => (
           <button
             key={key}
             onClick={() => setActiveSection(key)}
-            className={`font-barlow font-light text-[10px] tracking-widest uppercase px-5 py-2 border transition-colors duration-200 ${
+            className={`font-barlow font-light text-[10px] tracking-widest uppercase px-4 py-2 border transition-colors duration-200 ${
               activeSection === key
                 ? "border-obsidian bg-obsidian text-ivory"
                 : "border-obsidian/20 text-museum hover:border-obsidian/50"
@@ -59,149 +76,54 @@ export default function CatalogueClient() {
           </button>
         ))}
         <span className="ml-auto font-barlow font-light text-[10px] tracking-widest3 uppercase text-museum">
-          {activeSection === "tous"
-            ? `${products.length + casques.length + usbs.length} produits`
-            : activeSection === "speaker"
-            ? `${products.length} coloris`
-            : activeSection === "casque"
-            ? `${casques.length} coloris`
-            : `${usbs.length} produit`}
+          {totalCount} produit{totalCount > 1 ? "s" : ""}
         </span>
       </div>
 
-      {/* Speaker Kong section */}
+      {/* Product sections */}
       <AnimatePresence mode="wait">
-        {showSpeakers && (
-          <motion.div
-            key="speakers"
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.5 }}
-            className="pt-16 pb-12"
-          >
-            {activeSection === "tous" && (
-              <div className="mb-10 flex items-end justify-between">
-                <div>
-                  <p className="font-barlow font-light text-[9px] tracking-widest4 uppercase text-museum mb-2">
-                    Enceinte d&apos;art
-                  </p>
-                  <h2 className="font-bebas text-[clamp(36px,5vw,72px)] leading-none tracking-wide text-obsidian">
-                    Speaker Kong
-                  </h2>
+        <motion.div
+          key={activeSection}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -8 }}
+          transition={{ duration: 0.5 }}
+        >
+          {visibleSections.map((section, si) => (
+            <div key={section.key}>
+              {si > 0 && <div className="border-t border-obsidian/10 my-4" />}
+              <div className="pt-16 pb-12">
+                {activeSection === "tous" && (
+                  <div className="mb-10 flex items-end justify-between">
+                    <div>
+                      <p className="font-barlow font-light text-[9px] tracking-widest4 uppercase text-museum mb-2">
+                        {section.subtitle}
+                      </p>
+                      <h2 className="font-bebas text-[clamp(36px,5vw,72px)] leading-none tracking-wide text-obsidian">
+                        {section.label}
+                      </h2>
+                    </div>
+                    <span className="font-barlow font-light text-[9px] tracking-widest3 uppercase text-museum pb-2">
+                      {section.products.length} produit{section.products.length > 1 ? "s" : ""}
+                    </span>
+                  </div>
+                )}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+                  {section.products.map((product, i) => (
+                    <motion.div
+                      key={product.id}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4, delay: i * 0.04 }}
+                    >
+                      <ProductCard product={product} index={i} />
+                    </motion.div>
+                  ))}
                 </div>
-                <span className="font-barlow font-light text-[9px] tracking-widest3 uppercase text-museum pb-2">
-                  {products.length} coloris
-                </span>
               </div>
-            )}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
-              {products.map((product, i) => (
-                <motion.div
-                  key={product.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: i * 0.05 }}
-                >
-                  <ProductCard product={product} index={i} />
-                </motion.div>
-              ))}
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
-      {/* Divider speaker → casque */}
-      {activeSection === "tous" && (
-        <div className="border-t border-obsidian/10 my-4" />
-      )}
-
-      {/* Casque Bluetooth section */}
-      <AnimatePresence mode="wait">
-        {showCasques && (
-          <motion.div
-            key="casques"
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.5, delay: activeSection === "tous" ? 0.1 : 0 }}
-            className="pt-16 pb-28"
-          >
-            {activeSection === "tous" && (
-              <div className="mb-10 flex items-end justify-between">
-                <div>
-                  <p className="font-barlow font-light text-[9px] tracking-widest4 uppercase text-museum mb-2">
-                    Audio haute fidélité
-                  </p>
-                  <h2 className="font-bebas text-[clamp(36px,5vw,72px)] leading-none tracking-wide text-obsidian">
-                    Casque Bluetooth
-                  </h2>
-                </div>
-                <span className="font-barlow font-light text-[9px] tracking-widest3 uppercase text-museum pb-2">
-                  {casques.length} coloris
-                </span>
-              </div>
-            )}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
-              {casques.map((product, i) => (
-                <motion.div
-                  key={product.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: i * 0.05 }}
-                >
-                  <ProductCard product={product} index={i} />
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-      {/* Divider casque → usb */}
-      {activeSection === "tous" && (
-        <div className="border-t border-obsidian/10 my-4" />
-      )}
-
-      {/* Clé USB section */}
-      <AnimatePresence mode="wait">
-        {showUsbs && (
-          <motion.div
-            key="usbs"
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.5, delay: activeSection === "tous" ? 0.15 : 0 }}
-            className="pt-16 pb-28"
-          >
-            {activeSection === "tous" && (
-              <div className="mb-10 flex items-end justify-between">
-                <div>
-                  <p className="font-barlow font-light text-[9px] tracking-widest4 uppercase text-museum mb-2">
-                    Accessoire collector
-                  </p>
-                  <h2 className="font-bebas text-[clamp(36px,5vw,72px)] leading-none tracking-wide text-obsidian">
-                    Clé USB
-                  </h2>
-                </div>
-                <span className="font-barlow font-light text-[9px] tracking-widest3 uppercase text-museum pb-2">
-                  {usbs.length} produit
-                </span>
-              </div>
-            )}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
-              {usbs.map((product, i) => (
-                <motion.div
-                  key={product.id}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: i * 0.05 }}
-                >
-                  <ProductCard product={product} index={i} />
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        )}
+          ))}
+        </motion.div>
       </AnimatePresence>
     </div>
   );
