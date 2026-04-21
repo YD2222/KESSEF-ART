@@ -52,7 +52,7 @@ export default function Footer() {
               { href: "#", label: "Authenticité" },
               { href: "#", label: "Livraison" },
               { href: "#", label: "Retours" },
-              { href: "#", label: "Mentions légales" },
+              { href: "/mentions-legales", label: "Mentions légales" },
             ].map((link) => (
               <Link
                 key={link.label}
