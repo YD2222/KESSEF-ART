@@ -15,7 +15,7 @@ export default function Footer() {
             uniquement ce qui résiste au temps.
           </p>
           <p className="font-barlow font-light text-[10px] tracking-widest3 text-ivory/30 mt-8 uppercase">
-            Paris · New York · Dubaï
+            Paris · Lyon
           </p>
         </div>
 
