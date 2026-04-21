@@ -112,7 +112,7 @@ export default function ProductDetailClient({ product, related }: Props) {
           </p>
 
           {/* Add to cart */}
-          <div className="mb-8">
+          <div className="mb-4">
             <button
               onClick={handleAddToCart}
               disabled={!product.available}
@@ -127,6 +127,20 @@ export default function ProductDetailClient({ product, related }: Props) {
               {added ? "Ajouté au panier ✓" : product.available ? "Ajouter au panier" : "Indisponible"}
             </button>
           </div>
+
+          {/* Transparence état produit — Speaker Kong uniquement */}
+          {product.category === "Speaker Kong" && (
+            <div className="mb-8 flex items-start gap-3 px-4 py-3 border border-obsidian/10 bg-obsidian/[0.02]">
+              <span className="font-barlow text-[11px] text-museum mt-0.5 flex-shrink-0">ℹ</span>
+              <p className="font-barlow font-light text-[10px] tracking-wide text-museum leading-relaxed">
+                Ce produit peut présenter de légères imperfections de peinture sans incidence sur ses performances.{" "}
+                <Link href="/mentions-legales#transparence" className="underline underline-offset-2 hover:text-obsidian transition-colors duration-200">
+                  En savoir plus
+                </Link>
+                {" "}— La valise Kong Escape est incluse en compensation.
+              </p>
+            </div>
+          )}
 
           {added && (
             <motion.div

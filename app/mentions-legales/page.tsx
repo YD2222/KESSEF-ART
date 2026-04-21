@@ -66,7 +66,7 @@ export default function MentionsLegalesPage() {
             </section>
 
             {/* 3. État des produits — section transparence */}
-            <section className="bg-obsidian/[0.03] border border-obsidian/10 p-8">
+            <section id="transparence" className="bg-obsidian/[0.03] border border-obsidian/10 p-8">
               <div className="flex items-start gap-4 mb-6">
                 <div className="flex-shrink-0 w-8 h-8 border border-obsidian/20 flex items-center justify-center">
                   <span className="font-bebas text-[14px] text-obsidian">!</span>
