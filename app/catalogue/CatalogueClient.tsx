@@ -2,16 +2,15 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { products, casques, usbs, exclusivites, digigraphies, livres, bestSellers, divers, textiles } from "@/lib/products";
+import { products, casques, exclusivites, digigraphies, livres, bestSellers, divers, textiles } from "@/lib/products";
 import ProductCard from "@/components/ProductCard";
 import { Product } from "@/lib/products";
 
-type Section = "tous" | "speaker" | "casque" | "usb" | "exclusivites" | "digigraphies" | "livres" | "best-sellers" | "divers" | "textiles";
+type Section = "tous" | "speaker" | "casque" | "exclusivites" | "digigraphies" | "livres" | "best-sellers" | "divers" | "textiles";
 
 const sections: { key: Section; label: string; subtitle: string; products: Product[] }[] = [
   { key: "speaker", label: "Speaker Kong", subtitle: "Enceinte d'art", products },
   { key: "casque", label: "Casque Bluetooth", subtitle: "Audio haute fidélité", products: casques },
-  { key: "usb", label: "Clé USB", subtitle: "Accessoire collector", products: usbs },
   { key: "exclusivites", label: "Exclusivités", subtitle: "Sculptures & éditions limitées", products: exclusivites },
   { key: "digigraphies", label: "Digigraphies", subtitle: "Reproductions d'art", products: digigraphies },
   { key: "livres", label: "Livres", subtitle: "Art books & publications", products: livres },
@@ -20,7 +19,7 @@ const sections: { key: Section; label: string; subtitle: string; products: Produ
   { key: "textiles", label: "Textiles", subtitle: "Mode & streetwear", products: textiles },
 ];
 
-const allProducts = [...products, ...casques, ...usbs, ...exclusivites, ...digigraphies, ...livres, ...bestSellers, ...divers, ...textiles];
+const allProducts = [...products, ...casques, ...exclusivites, ...digigraphies, ...livres, ...bestSellers, ...divers, ...textiles];
 
 export default function CatalogueClient() {
   const [activeSection, setActiveSection] = useState<Section>("tous");

@@ -59,11 +59,13 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
           <p className="font-cormorant font-light text-[14px] text-museum leading-snug line-clamp-2">
             {product.description}
           </p>
-          <div className="pt-2">
-            <span className="font-barlow font-light text-[10px] tracking-widest3 uppercase text-museum/60">
-              Valise Kong Escape incluse
-            </span>
-          </div>
+          {product.category === "Speaker Kong" && (
+            <div className="pt-2">
+              <span className="font-barlow font-light text-[10px] tracking-widest3 uppercase text-museum/60">
+                Valise Kong Escape incluse
+              </span>
+            </div>
+          )}
         </div>
       </Link>
     </motion.div>
