@@ -188,15 +188,9 @@ export default function ProductDetailClient({ product, related }: Props) {
           )}
 
           {/* Specifications */}
+          {Object.keys(product.specs).length > 0 && (
           <div className="border-t border-obsidian/10 pt-8 space-y-3">
-            {[
-              { label: "Bluetooth", value: product.specs.bluetooth },
-              { label: "Puissance", value: product.specs.puissance },
-              { label: "Autonomie", value: product.specs.autonomie },
-              { label: "Dimensions", value: product.specs.dimensions },
-              { label: "Poids", value: product.specs.poids },
-              { label: "Recharge", value: product.specs.charge },
-            ].map(({ label, value }) => (
+            {Object.entries(product.specs).map(([label, value]) => (
               <div key={label} className="flex items-baseline justify-between gap-4">
                 <p className="font-barlow font-light text-[9px] tracking-widest3 uppercase text-museum flex-shrink-0">
                   {label}
@@ -208,8 +202,10 @@ export default function ProductDetailClient({ product, related }: Props) {
               </div>
             ))}
           </div>
+          )}
 
           {/* Inclus */}
+          {product.category === "Speaker Kong" && product.inclus && (
           <div className="mt-8 border border-obsidian/10 p-6 flex items-start gap-4">
             <div className="flex-shrink-0 w-8 h-8 border border-obsidian/20 flex items-center justify-center">
               <span className="font-bebas text-[14px] text-museum">✓</span>
@@ -223,6 +219,7 @@ export default function ProductDetailClient({ product, related }: Props) {
               </p>
             </div>
           </div>
+          )}
         </motion.div>
       </div>
 
