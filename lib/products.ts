@@ -503,7 +503,7 @@ export const textiles: Product[] = [
 ];
 
 
-export const allProducts: Product[] = [...products, ...casques, ...exclusivites, ...digigraphies, ...livres, ...bestSellers, ...divers, ...textiles];
+export const allProducts: Product[] = [...products, ...casques, ...exclusivites, ...digigraphies, ...livres, ...bestSellers, ...divers];
 
 export function getProductBySlug(slug: string): Product | undefined {
   return allProducts.find((p) => p.slug === slug);
