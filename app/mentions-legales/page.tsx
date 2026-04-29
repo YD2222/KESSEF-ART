@@ -36,17 +36,17 @@ export default function MentionsLegalesPage() {
               </h2>
               <div className="space-y-3 font-cormorant font-light text-[16px] text-carbon leading-relaxed border-l-2 border-obsidian/10 pl-6">
                 <p><span className="font-barlow text-[11px] tracking-widest uppercase text-museum">Société</span><br />
-                  [NOM DE LA SOCIÉTÉ] — à compléter</p>
+                  LIV INVEST</p>
                 <p><span className="font-barlow text-[11px] tracking-widest uppercase text-museum">Forme juridique</span><br />
-                  [SARL / SAS / Auto-entrepreneur] — à compléter</p>
+                  SARL</p>
                 <p><span className="font-barlow text-[11px] tracking-widest uppercase text-museum">Siège social</span><br />
-                  [ADRESSE COMPLÈTE] — à compléter</p>
+                  7 Place Puvis de Chavannes, 69006 Lyon</p>
                 <p><span className="font-barlow text-[11px] tracking-widest uppercase text-museum">SIRET</span><br />
-                  [NUMÉRO SIRET] — à compléter</p>
+                  922 013 701 00011</p>
                 <p><span className="font-barlow text-[11px] tracking-widest uppercase text-museum">Email</span><br />
                   contact@kessefart.com</p>
                 <p><span className="font-barlow text-[11px] tracking-widest uppercase text-museum">Directeur de la publication</span><br />
-                  [NOM DU RESPONSABLE] — à compléter</p>
+                  David Dahan</p>
               </div>
             </section>
 
