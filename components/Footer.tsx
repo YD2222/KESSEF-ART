@@ -53,6 +53,7 @@ export default function Footer() {
               { href: "#", label: "Livraison" },
               { href: "#", label: "Retours" },
               { href: "/mentions-legales", label: "Mentions légales" },
+              { href: "/cgv", label: "CGV" },
             ].map((link) => (
               <Link
                 key={link.label}
