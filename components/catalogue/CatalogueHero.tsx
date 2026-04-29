@@ -6,35 +6,43 @@ import Kong360Viewer from "@/components/Kong360Viewer";
 const sculptures = [
   {
     frames: [
-      "/kong-360/green1.jpg",
-      "/kong-360/green2.jpg",
-      "/kong-360/green3.jpg",
-      "/kong-360/green4.jpg",
+      "/kong-360/crackled1.jpg",
+      "/kong-360/crackled2.jpg",
+      "/kong-360/crackled3.jpg",
+      "/kong-360/crackled4.jpg",
     ],
-    label: "Kong Christmas Green",
+    label: "Kong Crackled Gold",
+    slug: "kong-crackled-gold",
     delay: 0,
+    scale: 0.88,
+    speedDeg: 32,
   },
   {
     frames: [
-      "/kong-360/green3.jpg",
-      "/kong-360/green4.jpg",
       "/kong-360/green1.jpg",
       "/kong-360/green2.jpg",
+      "/kong-360/green3.jpg",
+      "/kong-360/green4.jpg",
     ],
     label: "Kong Christmas Green",
-    delay: 0.3,
-    startFrame: 2,
+    slug: "kong-christmas-green",
+    delay: 0.2,
+    scale: 1.15,
+    speedDeg: 36,
   },
+  // 3rd sculpture — à ajouter
   {
     frames: [
+      "/kong-360/green1.jpg",
       "/kong-360/green2.jpg",
       "/kong-360/green3.jpg",
       "/kong-360/green4.jpg",
-      "/kong-360/green1.jpg",
     ],
-    label: "Kong Christmas Green",
-    delay: 0.6,
-    startFrame: 1,
+    label: "À venir",
+    slug: undefined,
+    delay: 0.4,
+    scale: 0.88,
+    speedDeg: 28,
   },
 ];
 
@@ -43,7 +51,7 @@ export default function CatalogueHero() {
     <section className="bg-obsidian overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-8 md:px-16 py-20 md:py-28">
 
-        {/* Header text */}
+        {/* Header */}
         <div className="text-center mb-16">
           <motion.p
             initial={{ opacity: 0, y: 10 }}
@@ -67,34 +75,33 @@ export default function CatalogueHero() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="font-cormorant font-light italic text-ivory/40 text-[15px] mt-3"
           >
-            Glissez pour explorer chaque œuvre
+            Glissez pour explorer · Cliquez pour découvrir
           </motion.p>
         </div>
 
-        {/* 3 Kongs */}
-        <div className="flex flex-col md:flex-row items-end justify-center gap-8 md:gap-16 lg:gap-24">
+        {/* 3 sculptures */}
+        <div className="flex flex-col md:flex-row items-end justify-center gap-4 md:gap-8 lg:gap-16">
           {sculptures.map((s, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: s.delay, ease: [0.22, 1, 0.36, 1] }}
-              // Centre plus grand, côtés plus petits
               style={{
-                transform: i === 1 ? "scale(1.15)" : "scale(0.88)",
+                transform: `scale(${s.scale})`,
                 transformOrigin: "bottom center",
               }}
             >
               <Kong360Viewer
                 frames={s.frames}
                 label={s.label}
-                intervalMs={900 + i * 150}
+                slug={s.slug}
+                speedDeg={s.speedDeg}
               />
             </motion.div>
           ))}
         </div>
 
-        {/* Bottom separator */}
         <div className="mt-16 border-t border-ivory/10" />
       </div>
     </section>
