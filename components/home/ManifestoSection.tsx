@@ -16,10 +16,10 @@ export default function ManifestoSection() {
           className="relative aspect-[4/3] md:aspect-auto min-h-[400px]"
         >
           <Image
-            src="https://images.unsplash.com/photo-1515169067868-5387ec356754?w=1200&q=90"
-            alt="Atelier Kessef Art"
+            src="/site2.png"
+            alt="Éternité — Kessef Art"
             fill
-            className="object-cover"
+            className="object-cover object-center"
           />
           <div className="absolute inset-0 bg-obsidian/20" />
         </motion.div>
