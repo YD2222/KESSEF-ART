@@ -50,7 +50,7 @@ export default function Footer() {
           <nav className="flex flex-col gap-3">
             {[
               { href: "#", label: "Authenticité" },
-              { href: "#", label: "Livraison" },
+              { href: "/cgv#livraison", label: "Livraison" },
               { href: "#", label: "Retours" },
               { href: "/mentions-legales", label: "Mentions légales" },
               { href: "/cgv", label: "CGV" },

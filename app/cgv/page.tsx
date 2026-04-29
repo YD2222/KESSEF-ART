@@ -116,7 +116,7 @@ export default function CGVPage() {
             </section>
 
             {/* 7. Livraison */}
-            <section>
+            <section id="livraison">
               <h2 className="font-bebas text-[28px] tracking-wide text-obsidian mb-6">7. Livraison</h2>
               <div className="space-y-4 font-cormorant font-light text-[16px] text-carbon leading-relaxed border-l-2 border-obsidian/10 pl-6">
                 <p>
