@@ -139,7 +139,7 @@ export default function Kong360Viewer({
       {/* 3D viewer */}
       <div
         className="relative w-[200px] h-[300px] md:w-[240px] md:h-[360px]"
-        style={{ animation: "kong-float 3.5s ease-in-out infinite" }}
+        style={{ animation: "kong-breathe 4s ease-in-out infinite" }}
         onMouseDown={onMouseDown}
         onClick={handleClick}
       >
@@ -207,9 +207,9 @@ export default function Kong360Viewer({
       )}
 
       <style jsx global>{`
-        @keyframes kong-float {
-          0%, 100% { transform: translateY(0px); }
-          50%       { transform: translateY(-14px); }
+        @keyframes kong-breathe {
+          0%, 100% { transform: scale(1);    filter: drop-shadow(0 0 0px rgba(255,255,255,0)); }
+          50%       { transform: scale(1.04); filter: drop-shadow(0 8px 24px rgba(255,255,255,0.12)); }
         }
       `}</style>
     </div>

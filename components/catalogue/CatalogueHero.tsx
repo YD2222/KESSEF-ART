@@ -30,16 +30,15 @@ const sculptures = [
     scale: 1.15,
     speedDeg: 36,
   },
-  // 3rd sculpture — à ajouter
   {
     frames: [
-      "/kong-360/green1.jpg",
-      "/kong-360/green2.jpg",
-      "/kong-360/green3.jpg",
-      "/kong-360/green4.jpg",
+      "/kong-360/croco1.jpg",
+      "/kong-360/croco2.jpg",
+      "/kong-360/croco3.jpg",
+      "/kong-360/croco4.jpg",
     ],
-    label: "À venir",
-    slug: undefined,
+    label: "Croco Red Orlinski",
+    slug: "croco-red",
     delay: 0.4,
     scale: 0.88,
     speedDeg: 28,

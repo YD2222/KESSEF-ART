@@ -10,8 +10,8 @@ type Section = "tous" | "speaker" | "casque" | "exclusivites" | "digigraphies" |
 
 const sections: { key: Section; label: string; subtitle: string; products: Product[] }[] = [
   { key: "speaker", label: "Speaker Kong", subtitle: "Enceinte d'art", products },
-  { key: "casque", label: "Casque Bluetooth", subtitle: "Audio haute fidélité", products: casques },
   { key: "exclusivites", label: "Exclusivités", subtitle: "Sculptures & éditions limitées", products: exclusivites },
+  { key: "casque", label: "Casque Bluetooth", subtitle: "Audio haute fidélité", products: casques },
   { key: "digigraphies", label: "Digigraphies", subtitle: "Reproductions d'art", products: digigraphies },
   { key: "livres", label: "Livres", subtitle: "Art books & publications", products: livres },
   { key: "best-sellers", label: "Best Sellers", subtitle: "Les incontournables", products: bestSellers },
