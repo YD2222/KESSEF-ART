@@ -9,8 +9,24 @@ import CheckoutForm from "./CheckoutForm";
 import PaymentBadges from "@/components/PaymentBadges";
 
 export default function CartClient() {
-  const { items, removeItem, updateQuantity, totalItems } = useCart();
+  const { items, removeItem, updateQuantity, totalItems, totalPrice } = useCart();
   const [step, setStep] = useState<"cart" | "checkout" | "confirmation">("cart");
+  const [isRedirecting, setIsRedirecting] = useState(false);
+
+  const handleStripeCheckout = async () => {
+    setIsRedirecting(true);
+    try {
+      const res = await fetch("/api/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ items }),
+      });
+      const data = await res.json();
+      if (data.url) window.location.href = data.url;
+    } catch {
+      setIsRedirecting(false);
+    }
+  };
 
   if (step === "confirmation") {
     return (
@@ -173,16 +189,26 @@ export default function CartClient() {
                 </div>
 
                 <div className="border-t border-obsidian/10 pt-4 mb-8">
-                  <p className="font-cormorant font-light italic text-[13px] text-museum leading-snug">
-                    Le prix vous sera communiqué par notre équipe après validation de votre demande.
-                  </p>
+                  {totalPrice > 0 ? (
+                    <div className="flex justify-between items-baseline">
+                      <span className="font-barlow font-light text-[11px] tracking-widest3 uppercase text-museum">Total</span>
+                      <span className="font-bebas text-[28px] tracking-wide text-obsidian">
+                        {totalPrice.toLocaleString("fr-FR")} €
+                      </span>
+                    </div>
+                  ) : (
+                    <p className="font-cormorant font-light italic text-[13px] text-museum leading-snug">
+                      Prix sur demande — notre équipe vous contactera sous 24h.
+                    </p>
+                  )}
                 </div>
 
                 <button
-                  onClick={() => setStep("checkout")}
-                  className="w-full py-4 bg-obsidian text-ivory font-barlow font-light text-[11px] tracking-widest3 uppercase hover:bg-carbon transition-colors duration-200"
+                  onClick={totalPrice > 0 ? handleStripeCheckout : () => setStep("checkout")}
+                  disabled={isRedirecting}
+                  className="w-full py-4 bg-obsidian text-ivory font-barlow font-light text-[11px] tracking-widest3 uppercase hover:bg-carbon transition-colors duration-200 disabled:opacity-50"
                 >
-                  Faire une demande
+                  {isRedirecting ? "Redirection…" : totalPrice > 0 ? "Payer en ligne" : "Faire une demande"}
                 </button>
 
                 <div className="mt-6">
