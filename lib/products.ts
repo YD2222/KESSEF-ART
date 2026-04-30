@@ -12,6 +12,7 @@ export interface Product {
   specs: Record<string, string>;
   category: string;
   inclus?: string;
+  price?: number;
 }
 
 export const products: Product[] = [
@@ -37,6 +38,7 @@ export const products: Product[] = [
       Connectiques: "Jack 3,5mm / USB DC 5V",
     },
     category: "Speaker Kong",
+    price: 350,
     inclus: "Valise Kong Escape format cabine à fermeture assortie",
   },
   {
@@ -60,6 +62,7 @@ export const products: Product[] = [
       Connectiques: "Jack 3,5mm / USB DC 5V",
     },
     category: "Speaker Kong",
+    price: 350,
     inclus: "Valise Kong Escape format cabine à fermeture assortie",
   },
   {
@@ -84,6 +87,7 @@ export const products: Product[] = [
       Connectiques: "Jack 3,5mm / USB DC 5V",
     },
     category: "Speaker Kong",
+    price: 350,
     inclus: "Valise Kong Escape format cabine à fermeture assortie",
   },
   {
@@ -107,6 +111,7 @@ export const products: Product[] = [
       Connectiques: "Jack 3,5mm / USB DC 5V",
     },
     category: "Speaker Kong",
+    price: 350,
     inclus: "Valise Kong Escape format cabine à fermeture assortie",
   },
   {
@@ -130,6 +135,7 @@ export const products: Product[] = [
       Connectiques: "Jack 3,5mm / USB DC 5V",
     },
     category: "Speaker Kong",
+    price: 350,
     inclus: "Valise Kong Escape format cabine à fermeture assortie",
   },
   {
@@ -153,6 +159,7 @@ export const products: Product[] = [
       Connectiques: "Jack 3,5mm / USB DC 5V",
     },
     category: "Speaker Kong",
+    price: 350,
     inclus: "Valise Kong Escape format cabine à fermeture assortie",
   },
   {
@@ -176,6 +183,7 @@ export const products: Product[] = [
       Connectiques: "Jack 3,5mm / USB DC 5V",
     },
     category: "Speaker Kong",
+    price: 350,
     inclus: "Valise Kong Escape format cabine à fermeture assortie",
   },
   {
@@ -199,6 +207,7 @@ export const products: Product[] = [
       Connectiques: "Jack 3,5mm / USB DC 5V",
     },
     category: "Speaker Kong",
+    price: 350,
     inclus: "Valise Kong Escape format cabine à fermeture assortie",
   },
   {
@@ -223,6 +232,7 @@ export const products: Product[] = [
       Connectiques: "Jack 3,5mm / USB DC 5V",
     },
     category: "Speaker Kong",
+    price: 350,
     inclus: "Valise Kong Escape format cabine à fermeture assortie",
   },
 ];
@@ -433,7 +443,7 @@ export const exclusivites: Product[] = [
   { id:"e21", slug:"ours-pompon-silver", name:"Ours Pompon x Orlinski", artist:"Richard Orlinski x Pompon", coloris:"Silver Edition", description:"La collaboration Orlinski x Pompon en argent — élégance et héritage sculptural.", longDescription:"L'Ours Pompon x Orlinski Silver Edition dialogue avec un siècle d'histoire de la sculpture française. L'argent brillant honore la tradition de Pompon tout en s'inscrivant résolument dans la modernité géométrique d'Orlinski.", available:true, images:["/products/ours-pompon-silver1.jpg","/products/ours-pompon-silver2.jpg","/products/ours-pompon-silver3.jpg","/products/ours-pompon-silver4.jpg"], specs:{ Dimensions:"23cm × 12cm × 4,5cm", Poids:"1,9kg (packaging inclus)", Matière:"Résine", Finition:"Silver Chrome" }, category:"Exclusivités" },
   { id:"e22", slug:"kong-oil-bubble-red", name:"Kong Oil Bubble", artist:"Richard Orlinski", coloris:"Red Edition", description:"Le Kong dans une bulle aux reflets irisés — une oeuvre psychédélique et précieuse.", longDescription:"Le Kong Oil Bubble Red Edition est une expérience visuelle totale. La surface irisée de la bulle crée des reflets changeants à chaque déplacement du regard. Le rouge du Kong à l'intérieur crée un contraste saisissant.", badge:"nouveau", available:true, images:["/products/kong-oil-bubble-red1.jpg","/products/kong-oil-bubble-red2.jpg","/products/kong-oil-bubble-red3.jpg","/products/kong-oil-bubble-red4.jpg"], specs:{ Dimensions:"18cm × 9,9cm × 4,9cm", Poids:"634g (packaging inclus)", Matière:"Résine", Finition:"Bubble Red irisé" }, category:"Exclusivités" },
   { id:"e23", slug:"dragon-green", name:"Dragon", artist:"Richard Orlinski", coloris:"Green Edition", description:"Le dragon d'Orlinski dans sa version verte — mythologie et géométrie.", longDescription:"Le Dragon Green Edition d'Orlinski convoque les mythologies du monde entier dans un langage plastique résolument contemporain. Le vert profond évoque les écailles des dragons des légendes orientales, tandis que la géométrie tranchante des facettes lui confère une modernité absolue.", available:true, images:["/products/dragon-green1.jpg","/products/dragon-green2.jpg","/products/dragon-green3.jpg","/products/dragon-green4.jpg"], specs:{ Dimensions:"11cm × 9,5cm × 24cm", Poids:"603g (packaging inclus)", Matière:"Résine", Finition:"Chrome" }, category:"Exclusivités" },
-  { id:"e24", slug:"kong-kase-silver", name:"Kong Kase", artist:"Richard Orlinski", coloris:"Silver Edition", description:"La valise Kong en argent — un accessoire de voyage d'exception.", longDescription:"Le Kong Kase Silver Edition est la valise des voyageurs qui refusent l'anonymat. Ornée du Kong en relief argent, elle impose une présence immédiate dans n'importe quel aéroport du monde.", available:true, images:["/products/kong-kase-silver1.jpg","/products/kong-kase-silver2.jpg","/products/kong-kase-silver3.jpg","/products/kong-kase-silver4.jpg"], specs:{ Dimensions:"15cm × 6cm × 3,5cm", Poids:"826g (packaging inclus)", Matière:"Résine", Finition:"Chrome" }, category:"Exclusivités" },
+  { id:"e24", slug:"kong-kase-silver", name:"Kong Kase", artist:"Richard Orlinski", coloris:"Silver Edition", description:"La valise Kong en argent — un accessoire de voyage d'exception.", longDescription:"Le Kong Kase Silver Edition est la valise des voyageurs qui refusent l'anonymat. Ornée du Kong en relief argent, elle impose une présence immédiate dans n'importe quel aéroport du monde.", available:true, images:["/products/kong-kase-silver1.jpg","/products/kong-kase-silver2.jpg","/products/kong-kase-silver3.jpg","/products/kong-kase-silver4.jpg"], specs:{ Dimensions:"15cm × 6cm × 3,5cm", Poids:"826g (packaging inclus)", Matière:"Résine", Finition:"Chrome" }, category:"Exclusivités", price: 350 },
   { id:"e25", slug:"standing-bear-silver-matte", name:"Standing Bear", artist:"Richard Orlinski", coloris:"Silver Matte", description:"L'ours debout en argent mat — dignité et présence naturelle.", longDescription:"Le Standing Bear Silver Matte d'Orlinski capture l'ours dans sa posture la plus impressionnante. Debout sur ses pattes arrière, il impose une présence monumentale que l'argent mat magnifie sans l'ostentation du brillant.", available:true, images:["/products/standing-bear-silver-matte1.jpg","/products/standing-bear-silver-matte2.jpg","/products/standing-bear-silver-matte3.jpg","/products/standing-bear-silver-matte4.jpg"], specs:{ Dimensions:"17cm × 11,5cm × 10,2cm", Poids:"995g (packaging inclus)", Matière:"Résine", Finition:"Matte" }, category:"Exclusivités" },
   { id:"e26", slug:"schtroumpf", name:"Schtroumpf", artist:"Richard Orlinski x Peyo", coloris:"Blue Edition", description:"Le Schtroumpf revisité par Orlinski — l'enfance rencontre l'art contemporain.", longDescription:"La collaboration entre Richard Orlinski et l'univers de Peyo donne naissance à une pièce unique. Les facettes caractéristiques d'Orlinski transforment le personnage culte de notre enfance en sculpture d'art contemporain collector.", badge:"exclusif", available:true, images:["/products/schtroumpf1.jpg","/products/schtroumpf2.jpg","/products/schtroumpf3.jpg","/products/schtroumpf4.jpg"], specs:{ Dimensions:"19cm × 10,5cm × 14cm", Poids:"1,8kg (packaging inclus)", Matière:"Résine", Finition:"Brillante" }, category:"Exclusivités" },
   { id:"e27", slug:"schtroumpfette", name:"Schtroumpfette", artist:"Richard Orlinski x Peyo", coloris:"Blue & White Edition", description:"La Schtroumpfette par Orlinski — féminité géométrique et nostalgie chic.", longDescription:"La Schtroumpfette version Orlinski apporte sa touche de féminité à la collection. Fidèle à l'esthétique géométrique de l'artiste, elle transforme l'icône féminine de Peyo en sculpture d'art contemporain.", available:true, images:["/products/schtroumpfette1.jpg","/products/schtroumpfette2.jpg","/products/schtroumpfette3.jpg","/products/schtroumpfette4.jpg"], specs:{ Dimensions:"19cm × 10,5cm × 10cm", Poids:"1,5kg (packaging inclus)", Matière:"Résine", Finition:"Brillante" }, category:"Exclusivités" },
@@ -479,7 +489,7 @@ export const divers: Product[] = [
   { id:"v2", slug:"drap-de-plage", name:"Drap de Plage", artist:"Richard Orlinski", coloris:"Collection Summer", description:"Le drap de plage Orlinski — la collection summer signée par l'artiste.", longDescription:"Le Drap de Plage Collection Summer d'Orlinski transforme la serviette de plage en accessoire de mode. Imprimé de motifs exclusifs créés par l'artiste, il allie praticité et esthétique.", available:true, images:["/products/drap-de-plage1.jpg","/products/drap-de-plage2.jpg","/products/drap-de-plage3.jpg","/products/drap-de-plage4.jpg"], specs:{ Dimensions:"170cm × 100cm", Matière:"100% coton", Épaisseur:"600g/m²" }, category:"Divers" },
   { id:"v3", slug:"sac-de-plage", name:"Sac de Plage", artist:"Richard Orlinski", coloris:"Collection Summer", description:"Le sac de plage Orlinski — emportez l'art avec vous.", longDescription:"Le Sac de Plage Collection Summer complète parfaitement la collection estivale d'Orlinski. Spacieux et résistant, il est orné de motifs exclusifs créés par l'artiste.", available:true, images:["/products/sac-de-plage1.jpg","/products/sac-de-plage2.jpg","/products/sac-de-plage3.jpg","/products/sac-de-plage4.jpg"], specs:{ Dimensions:"62cm × 20cm × 48cm", Matière:"100% coton", Épaisseur:"310g/m²" }, category:"Divers" },
   { id:"v4", slug:"raquettes-de-plage", name:"Raquettes de Plage", artist:"Richard Orlinski", coloris:"Collection Summer", description:"Les raquettes de plage Orlinski — le jeu devient art.", longDescription:"Les Raquettes de Plage Collection Summer transforment un jeu estival ordinaire en expérience esthétique. Ornées du design exclusif d'Orlinski, elles sont autant des accessoires de jeu que des objets de décoration.", available:true, images:["/products/raquettes-de-plage1.jpg","/products/raquettes-de-plage2.jpg","/products/raquettes-de-plage3.jpg","/products/raquettes-de-plage4.jpg"], specs:{ Dimensions:"33cm × 18,5cm × 1cm", Poids:"422g (packaging inclus)", Matière:"Bois de chêne et mousse", Contenu:"Set de 2 raquettes + balle" }, category:"Divers" },
-  { id:"v5", slug:"kong-kase-red", name:"Kong Kase", artist:"Richard Orlinski", coloris:"Red Edition", description:"La valise Kong en rouge — voyager avec style et sans compromis.", longDescription:"Le Kong Kase Red Edition est la valise des voyageurs qui refusent l'anonymat. Ornée du Kong en relief rouge écarlate, elle impose une présence immédiate dans n'importe quel aéroport du monde.", available:true, images:["/products/kong-kase-red1.jpg","/products/kong-kase-red2.jpg","/products/kong-kase-red3.jpg","/products/kong-kase-red4.jpg"], specs:{ Dimensions:"52cm × 33cm × 26cm", Poids:"3,2kg (packaging inclus)", Matière:"Plastique" }, category:"Divers" },
+  { id:"v5", slug:"kong-kase-red", name:"Kong Kase", artist:"Richard Orlinski", coloris:"Red Edition", description:"La valise Kong en rouge — voyager avec style et sans compromis.", longDescription:"Le Kong Kase Red Edition est la valise des voyageurs qui refusent l'anonymat. Ornée du Kong en relief rouge écarlate, elle impose une présence immédiate dans n'importe quel aéroport du monde.", available:true, images:["/products/kong-kase-red1.jpg","/products/kong-kase-red2.jpg","/products/kong-kase-red3.jpg","/products/kong-kase-red4.jpg"], specs:{ Dimensions:"52cm × 33cm × 26cm", Poids:"3,2kg (packaging inclus)", Matière:"Plastique" }, category:"Divers", price: 350 },
   { id:"v6", slug:"airpods-kase-kong-rose", name:"AirPods Kase Kong", artist:"Richard Orlinski", coloris:"Rose", description:"La coque AirPods Kong en rose — protégez vos écouteurs avec style.", longDescription:"L'AirPods Kase Kong Rose transpose l'univers d'Orlinski dans l'accessoire tech le plus visible du quotidien. La forme du Kong géométrique s'adapte parfaitement au format de la coque AirPods.", available:true, images:["/products/airpods-kase-kong-rose1.jpg","/products/airpods-kase-kong-rose2.jpg","/products/airpods-kase-kong-rose3.jpg","/products/airpods-kase-kong-rose4.jpg"], specs:{ Poids:"100g (packaging inclus)", Matière:"Silicone", Compatibilité:"AirPods 2ème génération uniquement" }, category:"Divers" },
   { id:"v7", slug:"totebag-power-of-art", name:"Totebag", artist:"Richard Orlinski", coloris:"Power of Art", description:"Le totebag Power of Art — l'art au quotidien.", longDescription:"Le Totebag Power of Art d'Orlinski est le compagnon idéal pour ceux qui portent l'art dans leur vie quotidienne. Robuste et spacieux, il affiche le message emblématique de l'artiste avec une sobriété élégante.", available:true, images:["/products/totebag-power-of-art1.jpg","/products/totebag-power-of-art2.jpg","/products/totebag-power-of-art3.jpg","/products/totebag-power-of-art4.jpg"], specs:{ Dimensions:"62cm × 20cm × 48cm", Matière:"100% coton", Épaisseur:"310g/m²" }, category:"Divers" },
   { id:"v8", slug:"gourde-power-of-art", name:"Gourde", artist:"Richard Orlinski", coloris:"Power of Art", description:"La gourde Power of Art — rester hydraté avec style.", longDescription:"La Gourde Power of Art d'Orlinski allie fonctionnalité et esthétique. Sa finition soignée et son message artistique en font un accessoire du quotidien qui reflète les valeurs de l'artiste.", available:true, images:["/products/gourde-power-of-art1.jpg","/products/gourde-power-of-art2.jpg","/products/gourde-power-of-art3.jpg","/products/gourde-power-of-art4.jpg"], specs:{ Dimensions:"20,7cm × 13,5cm", Contenance:"0,55L", Poids:"120g (packaging inclus)", Matière:"Aluminium et silicone" }, category:"Divers" },

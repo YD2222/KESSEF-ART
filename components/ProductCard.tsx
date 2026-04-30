@@ -56,6 +56,11 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
           <h3 className="font-bebas text-[22px] tracking-wide text-obsidian leading-none">
             {product.name} <span className="text-museum">{product.coloris}</span>
           </h3>
+          {product.price != null && (
+            <p className="font-barlow font-light text-[13px] tracking-wide text-obsidian">
+              {product.price.toLocaleString("fr-FR")} €
+            </p>
+          )}
           <p className="font-cormorant font-light text-[14px] text-museum leading-snug line-clamp-2">
             {product.description}
           </p>

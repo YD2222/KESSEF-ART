@@ -111,6 +111,13 @@ export default function ProductDetailClient({ product, related }: Props) {
             {product.longDescription}
           </p>
 
+          {/* Price */}
+          {product.price != null && (
+            <p className="font-bebas text-[clamp(32px,4vw,52px)] leading-none tracking-wide text-obsidian mb-6">
+              {product.price.toLocaleString("fr-FR")} €
+            </p>
+          )}
+
           {/* Add to cart */}
           <div className="mb-4">
             <button
