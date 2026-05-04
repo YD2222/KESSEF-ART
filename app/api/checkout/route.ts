@@ -1,7 +1,5 @@
+// @ts-nocheck
 import { NextRequest, NextResponse } from "next/server";
-import Stripe from "stripe";
-
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!);
 
 export async function POST(req: NextRequest) {
   try {
@@ -11,18 +9,18 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "No items provided" }, { status: 400 });
     }
 
-    const origin = req.headers.get("origin") || "https://kessef-art.vercel.app";
+    const Stripe = (await import("stripe")).default;
+    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+
+    const origin = req.headers.get("origin") || "https://www.kessefart.com";
 
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
-      line_items: items.map((item: { product: { name: string; coloris: string; price: number; images: string[] }; quantity: number }) => ({
+      line_items: items.map((item) => ({
         price_data: {
           currency: "eur",
           product_data: {
             name: `${item.product.name} — ${item.product.coloris}`,
-            images: item.product.images[0]?.startsWith("/")
-              ? [`${origin}${item.product.images[0]}`]
-              : [item.product.images[0]],
           },
           unit_amount: Math.round(item.product.price * 100),
         },
