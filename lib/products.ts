@@ -263,6 +263,7 @@ export const casques: Product[] = [
     },
     category: "Casque Bluetooth",
     inclus: "Pochette de transport rigide, câble USB-C, câble jack 3,5mm",
+    price: 1,
   },
   {
     id: "c2",
