@@ -1,8 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import Stripe from "stripe";
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string);
-
 interface CartItem {
   product: {
     name: string;
@@ -14,6 +12,7 @@ interface CartItem {
 
 export async function POST(req: NextRequest) {
   try {
+    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string);
     const { items } = (await req.json()) as { items: CartItem[] };
 
     if (!items || !Array.isArray(items) || items.length === 0) {
