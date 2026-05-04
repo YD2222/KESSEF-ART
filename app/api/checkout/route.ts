@@ -1,16 +1,24 @@
-// @ts-nocheck
 import { NextRequest, NextResponse } from "next/server";
+import Stripe from "stripe";
+
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string);
+
+interface CartItem {
+  product: {
+    name: string;
+    coloris: string;
+    price: number;
+  };
+  quantity: number;
+}
 
 export async function POST(req: NextRequest) {
   try {
-    const { items } = await req.json();
+    const { items } = (await req.json()) as { items: CartItem[] };
 
     if (!items || !Array.isArray(items) || items.length === 0) {
       return NextResponse.json({ error: "No items provided" }, { status: 400 });
     }
-
-    const Stripe = (await import("stripe")).default;
-    const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
     const origin = req.headers.get("origin") || "https://www.kessefart.com";
 
