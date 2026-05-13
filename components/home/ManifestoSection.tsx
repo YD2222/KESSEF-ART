@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import SplitText from "@/components/SplitText";
 
 export default function ManifestoSection() {
   return (
@@ -37,15 +38,14 @@ export default function ManifestoSection() {
               Notre Manifeste
             </motion.p>
 
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.1 }}
-              className="font-bebas text-[clamp(36px,5vw,64px)] leading-none tracking-wide text-ivory mb-8"
-            >
-              L&apos;Éternité<br />comme standard
-            </motion.h2>
+            <h2 className="font-bebas text-[clamp(36px,5vw,64px)] leading-none tracking-wide text-ivory mb-8">
+              <span className="block">
+                <SplitText text="L'Éternité" delay={0.1} stagger={0.08} />
+              </span>
+              <span className="block">
+                <SplitText text="comme standard" delay={0.3} stagger={0.06} />
+              </span>
+            </h2>
 
             <motion.p
               initial={{ opacity: 0, y: 16 }}

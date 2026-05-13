@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import SplitText from "@/components/SplitText";
 
 export default function HeroSection() {
   return (
@@ -33,23 +34,24 @@ export default function HeroSection() {
             Galerie · Sculptures & Figurines de Luxe
           </motion.p>
 
-          {/* Main headline */}
-          <motion.h1
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="font-bebas text-[clamp(72px,12vw,180px)] leading-none tracking-wide text-ivory mb-6"
-          >
-            L&apos;ART<br />
-            PREND<br />
-            FORME
-          </motion.h1>
+          {/* Main headline — split text reveal */}
+          <h1 className="font-bebas text-[clamp(72px,12vw,180px)] leading-none tracking-wide text-ivory mb-6">
+            <span className="block">
+              <SplitText text="L'ART" trigger="onMount" delay={0.3} stagger={0.1} />
+            </span>
+            <span className="block">
+              <SplitText text="PREND" trigger="onMount" delay={0.5} stagger={0.1} />
+            </span>
+            <span className="block">
+              <SplitText text="FORME" trigger="onMount" delay={0.7} stagger={0.1} />
+            </span>
+          </h1>
 
           {/* Subtitle */}
           <motion.p
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
+            transition={{ duration: 0.8, delay: 1.1 }}
             className="font-cormorant font-light italic text-ivory/70 text-[18px] md:text-[22px] leading-relaxed max-w-lg mb-12"
           >
             Posséder une œuvre unique ne devrait pas être un privilège.
@@ -59,7 +61,7 @@ export default function HeroSection() {
           <motion.div
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.8 }}
+            transition={{ duration: 0.7, delay: 1.3 }}
             className="flex items-center gap-6"
           >
             <Link
@@ -82,7 +84,7 @@ export default function HeroSection() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.4, duration: 0.6 }}
+        transition={{ delay: 1.6, duration: 0.6 }}
         className="absolute bottom-8 right-8 md:right-16 flex flex-col items-center gap-3"
       >
         <span className="font-barlow font-light text-[9px] tracking-widest3 uppercase text-ivory/30 rotate-90 origin-center mb-6">

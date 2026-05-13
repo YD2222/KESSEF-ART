@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Kong360Viewer from "@/components/Kong360Viewer";
+import SplitText from "@/components/SplitText";
 
 const sculptures = [
   {
@@ -60,14 +61,9 @@ export default function CatalogueHero() {
           >
             Richard Orlinski × Kessef Art
           </motion.p>
-          <motion.h2
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="font-bebas text-[clamp(40px,6vw,80px)] leading-none tracking-wide text-ivory"
-          >
-            Sculptures d&apos;Exception
-          </motion.h2>
+          <h2 className="font-bebas text-[clamp(40px,6vw,80px)] leading-none tracking-wide text-ivory">
+            <SplitText text="Sculptures d'Exception" trigger="onMount" delay={0.15} stagger={0.07} />
+          </h2>
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
